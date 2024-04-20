@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"; // Import Axios for making HTTP requests
+// import {  useHistory } from 'react-router-dom';
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -10,7 +11,7 @@ export const Register = (props) => {
         e.preventDefault();
         try {
             // Send a POST request to your backend endpoint for user registration
-            const response = await axios.post('/api/register', { name, email, password });
+            const response = await axios.post('/register', { name, email, password });
             console.log(response.data); 
         } catch (error) {
             console.error("Registration failed:", error);
